@@ -1,0 +1,20 @@
+/* use universal selector to perform css reset */
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; /* box-sizing property by itself is not inherited, now it is */
+
+}
+
+/* root font size is set in the html element */
+html {
+    /* font-size: 10px; now 1 rem equals exactly 10px, use for conversion, removes ability to set default font size by user */
+    font-size: 62.5%; /* root font size is typically the browser default of 16px, now adustable 10/16 = 62.5% */
+    /* defines what one rem is */
+}
+
+body {
+   box-sizing: border-box; 
+
+}

@@ -1,0 +1,65 @@
+.btn {
+    &:link,
+    &:visited {  /* pseudo class, link is special state of the .btn selector */
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem; /* top and bottom, left and right, top, right,  bottom, left */
+        display: inline-block; /* box model works on this element as if it were a normal block element, inline means treated as text */
+        /* to center the button, set text-align: center up in .text-box */
+        border-radius: 10rem;
+        transition: all .2s; /* now the transform on hover and active will be transitioned from this initial state and duration */
+        position: relative;
+        font-size: 1.6rem;
+
+    }
+
+
+    &:hover {
+        transform: translateY(-3px);  /* make button move up on hover */
+        box-shadow: 0 1rem 2rem  rgba($color-black,.2); 
+
+        &::after { /* when button hovers we want pseudo styles for the after element */
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0; /* transitioned fade out */
+        }
+    }
+
+    &active { /* when we click it */
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        &after {
+            background-color: $color-white;
+    
+        }
+
+    }
+
+    /* psedudo::after adds a virtual element right after behind the element that we are selecting that we can then style */
+
+    &::after { /* treated like a child of the button */
+        content: ""; /* must be specified in order to appear */
+        display: inline-block; /* cause button is also inline block */
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute; /* to put behind button , reference is first element with relative position that it can find, button*/
+        top: 0;
+        left: 0;
+        z-index: -1; /* position of elements layered */
+        transition: all .4s; /* transition for the btn:hover::after state */
+        
+    }
+
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        /* makes element invisible prior to animation */
+        animation-fill-mode: backwards; /* automatically apply the styles of the zero% before starting */
+    }
+
+}
