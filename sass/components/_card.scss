@@ -1,0 +1,22 @@
+.card {
+    perspective: 150rem; // lovwer the value, the more dramatic the effect
+    -moz-perspective: 150rem; /* firfox */
+    // we want perspective so card appears to coming out as it rotates
+    // perspective is defined on the parent element of the element that
+    // should have the perspective.
+
+    &__side {
+        background-color: orangered;
+        color: #fff;
+        font-size: 2rem;
+        height: 50rem;
+        transition: all .8s;
+    }
+
+    &:hover &__side {
+        transform: rotateY(180deg);
+        
+    }
+}
+
+// .card:hover .card__side {
