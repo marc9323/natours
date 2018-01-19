@@ -40,6 +40,17 @@
 
     }
 
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &after {
+            background-color: $color-white;
+    
+        }
+
+    }
+
     /* psedudo::after adds a virtual element right after behind the element that we are selecting that we can then style */
 
     &::after { /* treated like a child of the button */
