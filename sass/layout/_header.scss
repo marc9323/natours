@@ -8,6 +8,7 @@
     background-size: cover; 
     background-position: top; /*top of image always stays at top of container */
     /* clockwise clippath */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     position: relative; /* so we can set .logo-box img container to absolute */
 
